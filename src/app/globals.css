@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 :root {
   --gold: #D4A543;
@@ -19,6 +17,26 @@ body {
   font-weight: 700;
   color: #000;
   display: inline-block;
+}
+
+.text-gold {
+  color: var(--gold);
+}
+
+.bg-dark-900 {
+  background-color: #0a0a0a;
+}
+
+.bg-dark-800 {
+  background-color: #111111;
+}
+
+.bg-dark-700 {
+  background-color: #1a1a1a;
+}
+
+.border-gold {
+  border-color: var(--gold);
 }
 
 .section-card {
