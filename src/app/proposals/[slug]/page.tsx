@@ -7,8 +7,13 @@ const proposals: Record<string, ProposalData> = {
   magero: mageroProposal,
 }
 
-export default function ProposalPage({ params }: { params: { slug: string } }) {
-  const proposal = proposals[params.slug]
+export function generateStaticParams() {
+  return Object.keys(proposals).map((slug) => ({ slug }))
+}
+
+export default async function ProposalPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const proposal = proposals[slug]
   
   if (!proposal) {
     return <div className="min-h-screen flex items-center justify-center">Proposal not found</div>
