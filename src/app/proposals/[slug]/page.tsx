@@ -1,8 +1,10 @@
 import { oilysaProposal } from '@/data/proposals/oilysa'
+import { mageroProposal } from '@/data/proposals/magero'
 import { ProposalData } from '@/data/types'
 
 const proposals: Record<string, ProposalData> = {
   oilysa: oilysaProposal,
+  magero: mageroProposal,
 }
 
 export default function ProposalPage({ params }: { params: { slug: string } }) {
